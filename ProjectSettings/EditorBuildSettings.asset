@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/shaderScenes.unity
     guid: 167cb6e7acea0fe41bc96ca2c51affd7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bank.unity
     guid: 5fd54d9b42967a84698436b3bea22ce3
+  - enabled: 1
+    path: Assets/Scenes/postTest.unity
+    guid: 4288bb1cad13dbb4ba3e0893a1c0b2ec
   m_configObjects: {}

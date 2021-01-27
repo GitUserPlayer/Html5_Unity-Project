@@ -16,6 +16,17 @@ public class PostController : MonoBehaviour
     void Update()
     {
         postD = GameObject.FindGameObjectWithTag("Post");
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            PostInst(0);
+            Debug.Log("0");
+        }
+        if (Input.GetKeyDown(KeyCode.O)) 
+        {
+            PostDestory();
+        }
     }
     public void PostInst(int num) 
     {
