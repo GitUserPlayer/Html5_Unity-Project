@@ -1,24 +1,14 @@
 fileFormatVersion: 2
-guid: a9e4fab7fd4f8514a98ae98c2f6b3604
+guid: afa50f5e35c69bd4586aa802b0298356
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: favara I black
-    second: {fileID: 2100000, guid: 094b6845be9ca624aa864a28ee5f06ff, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: favara I black.001
-    second: {fileID: 2100000, guid: c1878d554d2740b428ad2aff44f8e159, type: 2}
+  externalObjects: {}
   materials:
-    materialImportMode: 2
-    materialName: 2
-    materialSearch: 0
-    materialLocation: 0
+    materialImportMode: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -76,10 +66,10 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 0
+    blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []

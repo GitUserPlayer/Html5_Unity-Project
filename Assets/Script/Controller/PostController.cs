@@ -21,7 +21,7 @@ public class PostController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             PostInst(0);
-            Debug.Log("0");
+            //Debug.Log("0");
         }
         if (Input.GetKeyDown(KeyCode.O)) 
         {

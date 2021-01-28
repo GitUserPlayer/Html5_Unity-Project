@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ob
   - Post
+  - Object
   layers:
   - Default
   - TransparentFX

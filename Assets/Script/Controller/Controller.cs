@@ -5,23 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
-    public GameObject Ob_D;
-    public GameObject post;
-
-   
+    private GameObject Ob_D;
+   private GameObject post;
 
 
 
 
+    [SerializeField]
+    Transform UIPanel;
+    bool isPaused;
     void Start()
     {
-       
+        UIPanel.gameObject.SetActive(false); //make sure our pause menu is disabled when scene starts
+        isPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) 
+       /* if (Input.GetKeyDown(KeyCode.R)) 
         {
             Ob_D.GetComponent<startRoate>().enabled = true;
             Ob_D.GetComponent<ObjectController>().MouseT = false;
@@ -38,15 +40,35 @@ public class Controller : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.P))
         {
             post.SetActive(false);
-        }
-       /*if (Input.GetKeyDown(KeyCode.Space)) 
+        }*/
+       if (Input.GetKeyDown(KeyCode.Alpha0)) 
         {
             ScenesLoad();
-        }*/
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        { Pause(); }
+        else if ((Input.GetKeyDown(KeyCode.Escape) && isPaused))
+        { UnPause(); }
+
+
     }
     public void ScenesLoad() 
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+        UIPanel.gameObject.SetActive(true); //turn on the pause menu
+        Time.timeScale = 0f; //pause the game
+    }
+
+    public void UnPause()
+    {
+        isPaused = false;
+        UIPanel.gameObject.SetActive(false); //turn off pause menu
+        Time.timeScale = 1f; //resume game
     }
     public void RotationB() 
     {
