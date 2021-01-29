@@ -19,7 +19,10 @@ public class RayCont : MonoBehaviour
     public statusPlayer statusR;
 
     private int colorI , obInt;
-    
+
+    public Texture2D cursorTexture1;
+    public Texture2D cursorTexture2;
+
 
     void Start()
     {
@@ -35,10 +38,12 @@ public class RayCont : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) 
         {
             statusR = statusPlayer.color;
+            Cursor.SetCursor(cursorTexture1, Vector2.zero, CursorMode.Auto);
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
             statusR = statusPlayer.objectT;
+            Cursor.SetCursor(cursorTexture2, Vector2.zero, CursorMode.Auto);
         }
 
     }

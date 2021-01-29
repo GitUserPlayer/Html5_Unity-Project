@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour
     bool isPaused;
     void Start()
     {
-        UIPanel.gameObject.SetActive(false); //make sure our pause menu is disabled when scene starts
+        //UIPanel.gameObject.SetActive(false); //make sure our pause menu is disabled when scene starts
         isPaused = false;
     }
 
@@ -45,10 +45,10 @@ public class Controller : MonoBehaviour
         {
             ScenesLoad();
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+       /* if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         { Pause(); }
         else if ((Input.GetKeyDown(KeyCode.Escape) && isPaused))
-        { UnPause(); }
+        { UnPause(); }*/
 
 
     }
@@ -60,14 +60,14 @@ public class Controller : MonoBehaviour
     public void Pause()
     {
         isPaused = true;
-        UIPanel.gameObject.SetActive(true); //turn on the pause menu
+       // UIPanel.gameObject.SetActive(true); //turn on the pause menu
         Time.timeScale = 0f; //pause the game
     }
 
     public void UnPause()
     {
         isPaused = false;
-        UIPanel.gameObject.SetActive(false); //turn off pause menu
+       // UIPanel.gameObject.SetActive(false); //turn off pause menu
         Time.timeScale = 1f; //resume game
     }
     public void RotationB() 
