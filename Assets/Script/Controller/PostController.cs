@@ -6,7 +6,7 @@ public class PostController : MonoBehaviour
 {
     public GameObject[] Post;
     public GameObject CameraPos;
-    private GameObject postD;
+    public GameObject postD;
     void Start()
     {
         
@@ -19,9 +19,24 @@ public class PostController : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {         
+            if(postD == null)
+                PostInst(0);         
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            PostInst(0);
-            //Debug.Log("0");
+            if (postD == null)
+                PostInst(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (postD == null)
+                PostInst(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            if (postD == null)
+                PostInst(3);
         }
         if (Input.GetKeyDown(KeyCode.O)) 
         {

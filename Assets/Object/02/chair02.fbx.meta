@@ -8,15 +8,15 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: favara I black
-    second: {fileID: 2100000, guid: 094b6845be9ca624aa864a28ee5f06ff, type: 2}
+    second: {fileID: 2100000, guid: b7275bf555fc24f458f7bd577f8b4cb7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: favara I black.001
-    second: {fileID: 2100000, guid: c1878d554d2740b428ad2aff44f8e159, type: 2}
+    second: {fileID: 2100000, guid: a0a77c2250adc4f4fab702823fee18ea, type: 2}
   materials:
-    materialImportMode: 2
-    materialName: 2
+    materialImportMode: 1
+    materialName: 1
     materialSearch: 0
     materialLocation: 0
   animations:

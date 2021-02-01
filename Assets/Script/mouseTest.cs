@@ -28,4 +28,8 @@ public class mouseTest : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
         }
     }
+    public void Bo() 
+    {
+        lockM = true;
+    }
 }

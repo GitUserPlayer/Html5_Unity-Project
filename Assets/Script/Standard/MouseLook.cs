@@ -52,10 +52,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 camera.localRotation = m_CameraTargetRot;
             }
 
-           // UpdateCursorLock();
+            UpdateCursorLock();
         }
 
-       /* public void SetCursorLock(bool value)
+        public void SetCursorLock(bool value)
         {
             lockCursor = value;
             if(!lockCursor)
@@ -78,7 +78,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_cursorIsLocked = false;
             }
-            else if(Input.GetMouseButtonDown(0))
+            else if(Input.GetMouseButtonDown(1))
             {
                 m_cursorIsLocked = true;
             }
@@ -86,14 +86,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_cursorIsLocked)
             {
                 Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                Cursor.visible = true;
             }
             else if (!m_cursorIsLocked)
             {
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
-        }*/
+        }
 
         Quaternion ClampRotationAroundXAxis(Quaternion q)
         {
