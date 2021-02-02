@@ -19,26 +19,47 @@ public class PostController : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
-        {         
-            if(postD == null)
+        {
+            if (postD != null)
+            {
+                PostDestory();
+                PostInst(0);
+            }
+            if (postD == null)
                 PostInst(0);         
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            if (postD != null)
+            {
+                PostDestory();
+                PostInst(1);
+            }
             if (postD == null)
                 PostInst(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+
+            if (postD != null)
+            {
+                PostDestory();
+                PostInst(2);
+            }
             if (postD == null)
                 PostInst(2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
+            if (postD != null)
+            {
+                PostDestory();
+                PostInst(3);
+            }
             if (postD == null)
                 PostInst(3);
         }
-        if (Input.GetKeyDown(KeyCode.O)) 
+        if (Input.GetKeyDown(KeyCode.Alpha5)) 
         {
             PostDestory();
         }

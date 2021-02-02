@@ -43,7 +43,7 @@ public class Controller : MonoBehaviour
         }*/
        if (Input.GetKeyDown(KeyCode.Alpha0)) 
         {
-            ScenesLoad();
+            ScenesLoad(0);
         }
        /* if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         { Pause(); }
@@ -52,9 +52,9 @@ public class Controller : MonoBehaviour
 
 
     }
-    public void ScenesLoad() 
+    public void ScenesLoad(int num) 
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(num);
     }
 
     public void Pause()

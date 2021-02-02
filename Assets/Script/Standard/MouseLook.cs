@@ -30,10 +30,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void LookRotation(Transform character, Transform camera)
         {
-            float yRot = CrossPlatformInputManager.GetAxis("Mouse X") * XSensitivity;
+            float yRot = CrossPlatformInputManager.GetAxis("Horizontal") * XSensitivity;//修改成鍵盤水平
             float xRot = CrossPlatformInputManager.GetAxis("Mouse Y") * YSensitivity;
 
+            
             m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
+            
             m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
 
             if(clampVerticalRotation)
@@ -54,6 +56,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             UpdateCursorLock();
         }
+        
 
         public void SetCursorLock(bool value)
         {

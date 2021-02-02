@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/main_Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Scenes/shaderScenes.unity
+    path: Assets/Scenes/testS/shaderScenes.unity
     guid: 167cb6e7acea0fe41bc96ca2c51affd7
   - enabled: 0
     path: Assets/Scenes/Bank.unity
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/postTest.unity
     guid: 4288bb1cad13dbb4ba3e0893a1c0b2ec
-  - enabled: 0
-    path: Assets/A.unity
-    guid: 089e6786bafa8c843a3e7f63e5807d0f
+  - enabled: 1
+    path: Assets/Scenes/shopping.unity
+    guid: a88a4817113bf4b4ca6024eb8f52a4b0
   m_configObjects: {}

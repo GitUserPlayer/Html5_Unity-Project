@@ -7,6 +7,9 @@ TagManager:
   - Ob
   - Post
   - Object
+  - commodity
+  - bu
+  - back
   layers:
   - Default
   - TransparentFX

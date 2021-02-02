@@ -10,25 +10,46 @@ public class RayCont : MonoBehaviour
         color,
         objectT
     }
-    
-    
+   
+    //enum
+    public statusPlayer statusR;
+    //public statusColor statusCol;
+    //public statusObject statusObj;
+
+
     public GameObject target;
     public Color32 [] test;
 
     public GameObject[] Inst;
-    public statusPlayer statusR;
+
+    public GameObject MoBo;
+
+
 
     private int colorI , obInt;
 
     public Texture2D cursorTexture1;
     public Texture2D cursorTexture2;
 
+    public Controller Mcontroller;
+
+    //UI
+    public GameObject[] Rpro;
+    public GameObject[] Tpro;
+
+    public Transform Rtransform;
+    public Transform Ttransform;
+
+
 
     void Start()
     {
         statusR = statusPlayer.general;
-        colorI = 0;
-        obInt = 0;
+        colorI = -1;
+        obInt = -1;
+        MoBo.SetActive(false);
+       
+
     }
 
     // Update is called once per frame
@@ -38,12 +59,64 @@ public class RayCont : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) 
         {
             statusR = statusPlayer.color;
-            Cursor.SetCursor(cursorTexture1, Vector2.zero, CursorMode.Auto);
+
+            for (int i = 0; i < Tpro.Length; i++)
+            {
+                Tpro[i].SetActive(false);
+            }
+            colorI += 1;
+            obInt = -1;
+            if (colorI >= test.Length)
+            {
+                colorI = 0;            
+            }
+            if (Rpro[2].active == true) 
+            {
+                Rpro[2].SetActive(false);
+            }
+
+            Rpro[colorI].SetActive(true);
+
+            if (colorI > 0) 
+            {
+                Rpro[colorI - 1].SetActive(false);
+            }                    
+            Debug.Log(colorI);
+                                                      
+            //Cursor.SetCursor(cursorTexture1, Vector2.zero, CursorMode.Auto);//屬標
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
             statusR = statusPlayer.objectT;
-            Cursor.SetCursor(cursorTexture2, Vector2.zero, CursorMode.Auto);
+            for(int i = 0;i<Rpro.Length; i++) 
+            {
+                Rpro[i].SetActive(false);
+            }
+
+            colorI = -1;
+            obInt += 1;
+            if (obInt >= Inst.Length)
+            {
+                obInt = 0;
+            }
+            if (Tpro[2].active == true)
+            {
+                Tpro[2].SetActive(false);
+            }
+
+            Tpro[obInt].SetActive(true);
+
+            if (obInt > 0) 
+            {
+                Tpro[obInt - 1].SetActive(false);
+            }
+
+
+
+
+
+
+            //Cursor.SetCursor(cursorTexture2, Vector2.zero, CursorMode.Auto);
         }
 
     }
@@ -59,13 +132,27 @@ public class RayCont : MonoBehaviour
             {
                 if (statusR == statusPlayer.objectT)
                 {
+                    
                     myDestroy();
-                    InstObj();
+
+                    InstObj(obInt);
                 }
                 if (statusR == statusPlayer.color)
                 {
                     changeColor(test[colorI]);
                 }
+            }
+            if (target.tag=="bu") 
+            {
+                Mcontroller.ScenesLoad(1);
+            }
+            if (target.tag == "commodity")
+            {
+                MoBo.SetActive(true);
+            }
+            if (target.tag == "back")
+            {
+                MoBo.SetActive(false);
             }
         }
     }
@@ -96,9 +183,9 @@ public class RayCont : MonoBehaviour
     {
         obInt = num;
     }
-    void InstObj() 
+    void InstObj(int num) 
     {
-        Instantiate(Inst[obInt],target.transform);
+        Instantiate(Inst[num],target.transform);
     }
 
 
