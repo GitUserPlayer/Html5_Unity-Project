@@ -6,18 +6,20 @@ using UnityEngine.SceneManagement;
 public class Controller : MonoBehaviour
 {
     private GameObject Ob_D;
-   private GameObject post;
+    private GameObject post;
 
-
-
-
-    [SerializeField]
-    Transform UIPanel;
+    public GameObject[] shop;
+    public GameObject[] mainObject;
+    
     bool isPaused;
     void Start()
     {
         //UIPanel.gameObject.SetActive(false); //make sure our pause menu is disabled when scene starts
         isPaused = false;
+        for (int i =0;i<shop.Length ;i++) 
+        {
+            shop[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -55,7 +57,38 @@ public class Controller : MonoBehaviour
     public void ScenesLoad(int num) 
     {
         SceneManager.LoadScene(num);
+       
     }
+    public void shop_Time() 
+    {
+        for (int j = 0; j < shop.Length; j++)
+        {
+            shop[j].SetActive(true);
+        }
+        Debug.Log("SHOP");
+       //shop[0].SetActive(true);
+        for (int i = 0;i< mainObject.Length; i++) 
+        {
+            mainObject[i].SetActive(false);
+        }
+        
+    }
+    public void shop_End()
+    {
+        for (int j = 0; j < shop.Length; j++)
+        {
+            shop[j].SetActive(false);
+        }
+       
+        //shop[0].SetActive(true);
+        for (int i = 0; i < mainObject.Length; i++)
+        {
+            mainObject[i].SetActive(true);
+        }
+
+    }
+
+
 
     public void Pause()
     {
@@ -80,4 +113,5 @@ public class Controller : MonoBehaviour
         Ob_D.GetComponent<startRoate>().enabled = false;
         Ob_D.GetComponent<ObjectController>().MouseT = true;
     }
+    
 }

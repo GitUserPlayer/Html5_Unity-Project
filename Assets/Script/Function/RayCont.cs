@@ -144,7 +144,7 @@ public class RayCont : MonoBehaviour
             }
             if (target.tag=="bu") 
             {
-                Mcontroller.ScenesLoad(1);
+                Mcontroller.shop_Time();//修改這裡
             }
             if (target.tag == "commodity")
             {

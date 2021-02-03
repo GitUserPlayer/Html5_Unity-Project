@@ -44,4 +44,9 @@ public class ShopScCont : MonoBehaviour
         mo.SetActive(false);
         main.SetActive(true);
     }
+    public void EndS() 
+    {
+        finish.SetActive(false);
+        main.SetActive(true);
+    } 
 }
