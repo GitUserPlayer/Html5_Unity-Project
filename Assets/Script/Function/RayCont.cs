@@ -13,23 +13,21 @@ public class RayCont : MonoBehaviour
    
     //enum
     public statusPlayer statusR;
-    //public statusColor statusCol;
-    //public statusObject statusObj;
+  
 
 
     public GameObject target;
-    public Color32 [] test;
+    public Color32 [] chairColor;
 
     public GameObject[] Inst;
 
-    public GameObject MoBo;
+    public GameObject[] ObjecttUI;
 
 
 
     private int colorI , obInt;
 
-    public Texture2D cursorTexture1;
-    public Texture2D cursorTexture2;
+   
 
     public Controller Mcontroller;
 
@@ -37,8 +35,7 @@ public class RayCont : MonoBehaviour
     public GameObject[] Rpro;
     public GameObject[] Tpro;
 
-    public Transform Rtransform;
-    public Transform Ttransform;
+   
 
 
 
@@ -47,15 +44,21 @@ public class RayCont : MonoBehaviour
         statusR = statusPlayer.general;
         colorI = -1;
         obInt = -1;
-        MoBo.SetActive(false);
+        for (int i = 0;i<ObjecttUI.Length ;i++)
+        { ObjecttUI[i].SetActive(false); }
        
 
     }
 
-    // Update is called once per frame
+   [System.Obsolete]
     void Update()
     {
         RayObject();
+        if (Input.GetMouseButtonDown(1)) 
+        {
+            statusR = statusPlayer.general;
+        }
+
         if (Input.GetKeyDown(KeyCode.R)) 
         {
             statusR = statusPlayer.color;
@@ -66,7 +69,7 @@ public class RayCont : MonoBehaviour
             }
             colorI += 1;
             obInt = -1;
-            if (colorI >= test.Length)
+            if (colorI >= chairColor.Length)
             {
                 colorI = 0;            
             }
@@ -80,10 +83,7 @@ public class RayCont : MonoBehaviour
             if (colorI > 0) 
             {
                 Rpro[colorI - 1].SetActive(false);
-            }                    
-            Debug.Log(colorI);
-                                                      
-            //Cursor.SetCursor(cursorTexture1, Vector2.zero, CursorMode.Auto);//屬標
+            }                                                                      
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -109,16 +109,8 @@ public class RayCont : MonoBehaviour
             if (obInt > 0) 
             {
                 Tpro[obInt - 1].SetActive(false);
-            }
-
-
-
-
-
-
-            //Cursor.SetCursor(cursorTexture2, Vector2.zero, CursorMode.Auto);
-        }
-
+            }          
+        }      
     }
 
     public void  RayObject() 
@@ -132,31 +124,33 @@ public class RayCont : MonoBehaviour
             {
                 if (statusR == statusPlayer.objectT)
                 {
-                    
+                   
                     myDestroy();
-
                     InstObj(obInt);
                 }
                 if (statusR == statusPlayer.color)
                 {
-                    changeColor(test[colorI]);
+                    changeColor(chairColor[colorI]);
                 }
-            }
-            if (target.tag=="bu") 
-            {
-                Mcontroller.shop_Time();//修改這裡
             }
             if (target.tag == "commodity")
             {
-                MoBo.SetActive(true);
+                int id =  target.GetComponent<ID_Object>().ID;
+                ObjecttUI[id].SetActive(true);
             }
-            if (target.tag == "back")
-            {
-                MoBo.SetActive(false);
-            }
+            
+           
         }
     }
-
+    public void ObjectActive(GameObject UiOb)
+    {
+        UiOb.SetActive(false);
+    }
+    public void BuyTime() 
+    {
+        Mcontroller.shop_Time();
+    }
+   
     public void colorInt(int num) 
     {
         colorI = num;
@@ -176,8 +170,6 @@ public class RayCont : MonoBehaviour
             GameObject DestOb = target.transform.GetChild(i).gameObject;
             Destroy(DestOb);
         }
-       
-        Debug.Log("DDD");
     }
     public void ObInt(int num)
     {
@@ -187,6 +179,5 @@ public class RayCont : MonoBehaviour
     {
         Instantiate(Inst[num],target.transform);
     }
-
-
+   
 }

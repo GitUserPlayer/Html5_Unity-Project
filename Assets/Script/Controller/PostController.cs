@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,59 +7,33 @@ public class PostController : MonoBehaviour
 {
     public GameObject[] Post;
     public GameObject CameraPos;
-    public GameObject postD;
+    private GameObject postD;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         postD = GameObject.FindGameObjectWithTag("Post");
 
-
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (postD != null)
-            {
-                PostDestory();
-                PostInst(0);
-            }
-            if (postD == null)
-                PostInst(0);         
+            PostTurn(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (postD != null)
-            {
-                PostDestory();
-                PostInst(1);
-            }
-            if (postD == null)
-                PostInst(1);
+            PostTurn(2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-
-            if (postD != null)
-            {
-                PostDestory();
-                PostInst(2);
-            }
-            if (postD == null)
-                PostInst(2);
+            PostTurn(3);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            if (postD != null)
-            {
-                PostDestory();
-                PostInst(3);
-            }
-            if (postD == null)
-                PostInst(3);
+            PostTurn(4);
         }
+        
         if (Input.GetKeyDown(KeyCode.Alpha5)) 
         {
             PostDestory();
@@ -71,5 +46,15 @@ public class PostController : MonoBehaviour
     public void PostDestory() 
     {
         Destroy(postD);
+    }
+    private void PostTurn(int num) 
+    {
+        if (postD != null)
+        {
+            PostDestory();
+            PostInst(num-1);
+        }
+        else 
+        { PostInst(num-1); }      
     }
 }

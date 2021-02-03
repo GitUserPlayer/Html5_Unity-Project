@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class mouseTest : MonoBehaviour
 {
-    public bool lockM;
-
-    
+    public bool lockM; 
 
 
     void Start()
