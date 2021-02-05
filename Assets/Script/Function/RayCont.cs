@@ -20,7 +20,7 @@ public class RayCont : MonoBehaviour
 
     public GameObject[] Inst;
 
-    
+    public int id;
 
     private int colorI , obInt;
   
@@ -127,7 +127,7 @@ public class RayCont : MonoBehaviour
             }
             if (target.tag == "commodity")
             {
-                int id =  target.GetComponent<ID_Object>().ID;
+                id =  target.GetComponent<ID_Object>().ID;
                 i_Cont.ObjectUi[id].SetActive(true);
             }           
            

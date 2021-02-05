@@ -29,7 +29,11 @@ public class Controller : MonoBehaviour
        if (Input.GetKeyDown(KeyCode.Alpha0)) 
         {
             ScenesLoad(0);
-        }     
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            ScenesLoad(1);
+        }
     }
     public void ScenesLoad(int num) 
     {
