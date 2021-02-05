@@ -12,51 +12,52 @@ public class RayCont : MonoBehaviour
     }
    
     //enum
-    public statusPlayer statusR;
+    private statusPlayer statusR;
   
-
 
     public GameObject target;
     public Color32 [] chairColor;
 
     public GameObject[] Inst;
 
-    public GameObject[] ObjecttUI;
-
-
+    
 
     private int colorI , obInt;
-
-   
-
-    public Controller Mcontroller;
-
+  
     //UI
     public GameObject[] Rpro;
     public GameObject[] Tpro;
 
-   
 
+    public UI_Controller i_Cont;
 
-
+ 
     void Start()
     {
         statusR = statusPlayer.general;
         colorI = -1;
         obInt = -1;
-        for (int i = 0;i<ObjecttUI.Length ;i++)
-        { ObjecttUI[i].SetActive(false); }
-       
+      
 
     }
 
    [System.Obsolete]
     void Update()
     {
-        RayObject();
+        if (statusR == statusPlayer.color || statusR == statusPlayer.objectT)
+        { RayObject(); }
+
         if (Input.GetMouseButtonDown(1)) 
         {
             statusR = statusPlayer.general;
+            for (int i = 0;i<Rpro.Length ;i++) 
+            {
+                Rpro[i].SetActive(false);
+            }
+            for (int j = 0; j < Tpro.Length; j++)
+            {
+                Tpro[j].SetActive(false);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.R)) 
@@ -122,38 +123,25 @@ public class RayCont : MonoBehaviour
             target = hit.collider.gameObject;
             if (target.tag == "Object") 
             {
-                if (statusR == statusPlayer.objectT)
-                {
-                   
-                    myDestroy();
-                    InstObj(obInt);
-                }
-                if (statusR == statusPlayer.color)
-                {
-                    changeColor(chairColor[colorI]);
-                }
+                ObjectInteraction();
             }
             if (target.tag == "commodity")
             {
                 int id =  target.GetComponent<ID_Object>().ID;
-                ObjecttUI[id].SetActive(true);
-            }
-            
+                i_Cont.ObjectUi[id].SetActive(true);
+            }           
            
         }
     }
-    public void ObjectActive(GameObject UiOb)
-    {
-        UiOb.SetActive(false);
-    }
-    public void BuyTime() 
-    {
-        Mcontroller.shop_Time();
-    }
+   
    
     public void colorInt(int num) 
     {
         colorI = num;
+    }
+    public void ObInt(int num)
+    {
+        obInt = num;
     }
     public void changeColor(Color32 MyColor32)
     {
@@ -171,13 +159,24 @@ public class RayCont : MonoBehaviour
             Destroy(DestOb);
         }
     }
-    public void ObInt(int num)
-    {
-        obInt = num;
-    }
+   
     void InstObj(int num) 
     {
         Instantiate(Inst[num],target.transform);
     }
-   
+
+    void ObjectInteraction() 
+    {
+        if (statusR == statusPlayer.objectT)
+        {
+            myDestroy();
+            InstObj(obInt);
+        }
+        if (statusR == statusPlayer.color)
+        {
+            changeColor(chairColor[colorI]);
+        }
+    }
+
+
 }

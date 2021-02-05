@@ -5,48 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class ShopScCont : MonoBehaviour
 {
-    public GameObject main;
-    public GameObject mo;
-    public GameObject finish;
+    public GameObject[] shopUI;
+    
 
     void Start()
     {
-        main.SetActive(true);
-        mo.SetActive(false);
-        finish.SetActive(false);
+        for (int i =0;i<shopUI.Length ;i++ ) 
+        {
+            shopUI[i].SetActive(false);
+        }
+        shopUI[0].SetActive(true);     
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public void SceneBack() 
     {
         SceneManager.LoadScene(0);
     }
-    public void BuyOb() 
+    
+    public void TObject_Active(GameObject trueOb) 
+    {      
+        trueOb.SetActive(true);
+    }
+    public void FObject_Active( GameObject falseOb)
     {
-        mo.SetActive(true);
-        
-        main.SetActive(false);
+        falseOb.SetActive(false);
+    }
 
-    }
-    public void BuyOb2()
-    {
-        mo.SetActive(false);
-        finish.SetActive(true);
-        
-
-    }
-    public void NoB() 
-    {
-        mo.SetActive(false);
-        main.SetActive(true);
-    }
-    public void EndS() 
-    {
-        finish.SetActive(false);
-        main.SetActive(true);
-    } 
 }

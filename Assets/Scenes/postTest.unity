@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.62
+  m_AmbientIntensity: 0.26
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 32c907761524f844e87ea898e521d3e2, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 15c8b4f8b9a751d4ab0be7403d0bee71, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1008,8 +1008,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365301073}
-        m_MethodName: BuyTime
+      - m_Target: {fileID: 845065651}
+        m_MethodName: shop_Time
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1312,8 +1312,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365301073}
-        m_MethodName: BuyTime
+      - m_Target: {fileID: 845065651}
+        m_MethodName: shop_Time
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2245,6 +2245,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5305406909151051765, guid: 2971f8a8432960d44a87d985e99bfaab,
         type: 3}
+      propertyPath: shopUI.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305406909151051765, guid: 2971f8a8432960d44a87d985e99bfaab,
+        type: 3}
       propertyPath: main
       value: 
       objectReference: {fileID: 5672768371143651334}
@@ -2256,6 +2261,21 @@ PrefabInstance:
     - target: {fileID: 5305406909151051765, guid: 2971f8a8432960d44a87d985e99bfaab,
         type: 3}
       propertyPath: finish
+      value: 
+      objectReference: {fileID: 5672768370646407240}
+    - target: {fileID: 5305406909151051765, guid: 2971f8a8432960d44a87d985e99bfaab,
+        type: 3}
+      propertyPath: shopUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 5672768371143651334}
+    - target: {fileID: 5305406909151051765, guid: 2971f8a8432960d44a87d985e99bfaab,
+        type: 3}
+      propertyPath: shopUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 5672768371658188388}
+    - target: {fileID: 5305406909151051765, guid: 2971f8a8432960d44a87d985e99bfaab,
+        type: 3}
+      propertyPath: shopUI.Array.data[2]
       value: 
       objectReference: {fileID: 5672768370646407240}
     - target: {fileID: 5305406909151051767, guid: 2971f8a8432960d44a87d985e99bfaab,
@@ -3087,7 +3107,6 @@ MonoBehaviour:
   ObjecttUI:
   - {fileID: 539469813}
   - {fileID: 447058846}
-  Mcontroller: {fileID: 845065651}
   Rpro:
   - {fileID: 716588371}
   - {fileID: 1244077434}
@@ -3634,7 +3653,6 @@ GameObject:
   - component: {fileID: 1597895479}
   - component: {fileID: 1597895478}
   - component: {fileID: 1597895477}
-  - component: {fileID: 1597895480}
   m_Layer: 5
   m_Name: back
   m_TagString: Untagged
@@ -3752,19 +3770,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597895475}
   m_CullTransparentMesh: 0
---- !u!65 &1597895480
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597895475}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.3, y: 0.86757725, z: 0.1}
-  m_Center: {x: -0.35, y: 0.06, z: 0}
 --- !u!1 &1610704821
 GameObject:
   m_ObjectHideFlags: 0
@@ -11140,11 +11145,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1013237433}
-        m_MethodName: NoB
-        m_Mode: 1
+        m_MethodName: FObject_Active
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5672768371658188388}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1013237433}
+        m_MethodName: TObject_Active
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5672768371143651334}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11461,11 +11477,22 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1013237433}
-        m_MethodName: EndS
-        m_Mode: 1
+        m_MethodName: FObject_Active
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5672768370646407240}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1013237433}
+        m_MethodName: TObject_Active
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5672768371143651334}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11903,11 +11930,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1013237433}
-        m_MethodName: BuyOb
-        m_Mode: 1
+        m_MethodName: FObject_Active
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5672768371143651334}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1013237433}
+        m_MethodName: TObject_Active
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5672768371658188388}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12388,11 +12426,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1013237433}
-        m_MethodName: BuyOb2
-        m_Mode: 1
+        m_MethodName: FObject_Active
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 5672768371658188388}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1013237433}
+        m_MethodName: TObject_Active
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5672768370646407240}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21631,7 +21680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8218558976169547211
 GameObject:
   m_ObjectHideFlags: 0
