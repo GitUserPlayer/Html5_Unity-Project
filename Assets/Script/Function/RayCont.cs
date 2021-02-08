@@ -37,17 +37,14 @@ public class RayCont : MonoBehaviour
         statusR = statusPlayer.general;
         colorI = -1;
         obInt = -1;
-      
-
     }
 
    [System.Obsolete]
     void Update()
     {
-        if (statusR == statusPlayer.color || statusR == statusPlayer.objectT)
-        { RayObject(); }
+        RayObject(); 
 
-        if (Input.GetMouseButtonDown(1)) 
+       /* if (Input.GetMouseButtonDown(1)) 
         {
             statusR = statusPlayer.general;
             for (int i = 0;i<Rpro.Length ;i++) 
@@ -58,9 +55,9 @@ public class RayCont : MonoBehaviour
             {
                 Tpro[j].SetActive(false);
             }
-        }
+        }*/
 
-        if (Input.GetKeyDown(KeyCode.R)) 
+        /*if (Input.GetKeyDown(KeyCode.R)) 
         {
             statusR = statusPlayer.color;
 
@@ -111,7 +108,7 @@ public class RayCont : MonoBehaviour
             {
                 Tpro[obInt - 1].SetActive(false);
             }          
-        }      
+        }  */    
     }
 
     public void  RayObject() 
