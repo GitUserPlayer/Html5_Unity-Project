@@ -1815,6 +1815,8 @@ MonoBehaviour:
   - {fileID: 1667119028}
   - {fileID: 893910043}
   - {fileID: 1365301072}
+  rayCont: {fileID: 0}
+  RayTime: 0
 --- !u!1 &893910043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,7 +3093,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cb35f9072838345bb07bfe114ab6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusR: 0
   target: {fileID: 0}
   chairColor:
   - serializedVersion: 2
@@ -3104,9 +3105,7 @@ MonoBehaviour:
   - {fileID: 1462954806381078223, guid: 798deaeb6e21fe94aaa3595eeedcd66b, type: 3}
   - {fileID: 1579256749195668156, guid: f948844087dc275448c6b14691dc3de9, type: 3}
   - {fileID: 2738398463208057170, guid: 857eca5ceaec8414686e472d99cfc142, type: 3}
-  ObjecttUI:
-  - {fileID: 539469813}
-  - {fileID: 447058846}
+  id: 0
   Rpro:
   - {fileID: 716588371}
   - {fileID: 1244077434}
@@ -3115,6 +3114,7 @@ MonoBehaviour:
   - {fileID: 1870309334}
   - {fileID: 920777717}
   - {fileID: 1724845072}
+  i_Cont: {fileID: 0}
 --- !u!4 &1365301074
 Transform:
   m_ObjectHideFlags: 0
@@ -15516,13 +15516,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8217867429469176518}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.23999882, y: 2.5600004, z: 1.183652}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0.23999882, y: 1.76, z: 1.183652}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1685270187}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
 --- !u!4 &8215325537416758653
 Transform:
   m_ObjectHideFlags: 0
